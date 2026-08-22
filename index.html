@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم | V7.1</title>
+<title>وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم | V7.2</title>
 <meta content="وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم — عمرة وحج، تذاكر طيران، فنادق، رحلات منظمة وتأشيرات. تواصل معنا للحجز والاستفسار." name="description"/>
 <meta content="index, follow" name="robots"/>
 <meta content="وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم" name="author"/>
@@ -928,7 +928,7 @@ header .container{min-height:92px}
 @media(max-width:480px){.v68-section{padding:55px 15px}.v68-trust{grid-template-columns:1fr 1fr;gap:10px}.v68-stat{padding:18px 10px}.v68-stat strong{font-size:1.4rem}.v68-review{padding:20px}}
 </style>
 <style>
-/* V7.1 — premium travel showcase */
+/* V7.2 — premium travel showcase */
 .v70-showcase{padding:72px 20px;background:linear-gradient(180deg,#fff 0%,#f7f4ee 100%);position:relative;overflow:hidden}
 .v70-showcase:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(201,164,93,.10);top:-210px;left:-120px}
 .v70-head{max-width:1050px;margin:0 auto 30px;text-align:center;position:relative;z-index:1}
@@ -1966,5 +1966,53 @@ header .container{min-height:92px}
   });
 })();
 </script>
+
+<!-- ===== V7.2: visual gallery & destination experience ===== -->
+<style>
+.v72-gallery-head{display:flex;justify-content:space-between;gap:20px;align-items:end;flex-wrap:wrap;margin-bottom:25px}
+.v72-filters{display:flex;gap:8px;flex-wrap:wrap}
+.v72-filter{border:1px solid var(--line,#dfe6e7);background:#fff;border-radius:999px;padding:9px 15px;font-weight:800;cursor:pointer;color:#17313f}
+.v72-filter.active,.v72-filter:hover{background:#0f6f73;color:#fff;border-color:#0f6f73}
+.gallery-item.v72-hidden{display:none}
+.v72-caption{position:absolute;left:14px;top:14px;background:rgba(4,21,34,.72);color:#fff;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:900;z-index:2;backdrop-filter:blur(5px)}
+.v72-modal{position:fixed;inset:0;background:rgba(2,12,18,.9);display:none;align-items:center;justify-content:center;padding:24px;z-index:99999}
+.v72-modal.open{display:flex}.v72-modal img{max-width:min(1100px,94vw);max-height:82vh;object-fit:contain;border-radius:18px;box-shadow:0 25px 80px rgba(0,0,0,.45)}
+.v72-close{position:absolute;top:20px;left:20px;border:0;background:#fff;color:#071f31;width:46px;height:46px;border-radius:50%;font-size:24px;cursor:pointer;font-weight:900}
+.v72-modal-title{position:absolute;bottom:22px;right:50%;transform:translateX(50%);color:#fff;font-weight:900;background:rgba(0,0,0,.45);padding:8px 16px;border-radius:999px}
+.v72-dest-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.v72-dest{border-radius:18px;padding:18px;min-height:135px;color:#fff;position:relative;overflow:hidden;background:linear-gradient(145deg,#123c4b,#0f6f73);box-shadow:0 12px 30px rgba(7,31,49,.12)}
+.v72-dest:nth-child(2){background:linear-gradient(145deg,#315d55,#8b6a42)}.v72-dest:nth-child(3){background:linear-gradient(145deg,#294b6a,#8d5c48)}.v72-dest:nth-child(4){background:linear-gradient(145deg,#4c566e,#b18a65)}
+.v72-dest span{font-size:12px;opacity:.8}.v72-dest h3{margin:8px 0}.v72-dest a{color:#fff;text-decoration:none;font-weight:900;font-size:13px}
+@media(max-width:800px){.v72-dest-strip{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.v72-dest-strip{grid-template-columns:1fr}.v72-gallery-head{align-items:start}}
+</style>
+<script>
+(function(){
+  const gallery=document.querySelector('#gallery'); if(!gallery) return;
+  const grid=gallery.querySelector('.gallery-grid'); if(!grid) return;
+  const items=[...grid.querySelectorAll('.gallery-item')];
+  const labels={
+    makkah:'عمرة', medina:'عمرة', istanbul:'سياحة', paris:'سياحة', dubai:'سياحة'
+  };
+  const keyFor=el=>{
+    const a=(el.querySelector('img')?.alt||'').toLowerCase();
+    if(a.includes('مكة')) return 'makkah'; if(a.includes('مدينة')) return 'medina';
+    if(a.includes('إسطنبول')) return 'istanbul'; if(a.includes('باريس')) return 'paris'; if(a.includes('دبي')) return 'dubai'; return 'all';
+  };
+  items.forEach(el=>{const k=keyFor(el); el.dataset.v72cat=(k==='makkah'||k==='medina')?'umrah':'tourism'; if(!el.querySelector('.v72-caption')){const c=document.createElement('b');c.className='v72-caption';c.textContent=labels[k]||'وجهة';el.appendChild(c)}});
+  const head=gallery.querySelector('.gallery-head');
+  if(head){
+    const box=document.createElement('div'); box.className='v72-filters'; box.innerHTML='<button class="v72-filter active" data-v72="all">الكل</button><button class="v72-filter" data-v72="umrah">العمرة</button><button class="v72-filter" data-v72="tourism">السياحة</button>'; head.appendChild(box);
+    box.addEventListener('click',e=>{const b=e.target.closest('.v72-filter');if(!b)return;box.querySelectorAll('.v72-filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');const f=b.dataset.v72;items.forEach(i=>i.classList.toggle('v72-hidden',f!=='all'&&i.dataset.v72cat!==f));});
+  }
+  const modal=document.createElement('div'); modal.className='v72-modal'; modal.innerHTML='<button class="v72-close" aria-label="إغلاق">×</button><img alt=""><div class="v72-modal-title"></div>'; document.body.appendChild(modal);
+  const mi=modal.querySelector('img'), mt=modal.querySelector('.v72-modal-title');
+  items.forEach(el=>el.addEventListener('click',e=>{e.preventDefault();const img=el.querySelector('img');mi.src=img.currentSrc||img.src;mi.alt=img.alt;mt.textContent=img.alt||'Every Time Travel';modal.classList.add('open')}));
+  const close=()=>modal.classList.remove('open'); modal.querySelector('.v72-close').addEventListener('click',close); modal.addEventListener('click',e=>{if(e.target===modal)close()}); document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+  const section=document.querySelector('#destinations'); if(section && !document.querySelector('.v72-dest-strip')){
+    const container=section.querySelector('.container'); if(container){const strip=document.createElement('div');strip.className='v72-dest-strip';strip.innerHTML='<article class="v72-dest"><span>🇸🇦 عمرة وروحانية</span><h3>مكة المكرمة</h3><a href="#umrah-programs">برامج العمرة ←</a></article><article class="v72-dest"><span>🇸🇦 زيارة المدينة</span><h3>المدينة المنورة</h3><a href="#gallery">شاهد الصور ←</a></article><article class="v72-dest"><span>🇹🇷 سياحة دولية</span><h3>إسطنبول</h3><a href="#tour-packages">اطلب عرضًا ←</a></article><article class="v72-dest"><span>🇫🇷 أوروبا</span><h3>باريس</h3><a href="#tour-packages">اطلب عرضًا ←</a></article>';container.appendChild(strip)}}
+})();
+</script>
+
 </body>
 </html>
