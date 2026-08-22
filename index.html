@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم | V7.3</title>
+<title>وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم | V7.4</title>
 <meta content="وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم — عمرة وحج، تذاكر طيران، فنادق، رحلات منظمة وتأشيرات. تواصل معنا للحجز والاستفسار." name="description"/>
 <meta content="index, follow" name="robots"/>
 <meta content="وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم" name="author"/>
@@ -804,7 +804,7 @@ header .container{min-height:92px}
   @media(max-width:720px){.umrah-price-banner{flex-direction:column;align-items:flex-start}.umrah-price-badge{align-self:stretch;text-align:center}.umrah-price-banner h3{font-size:20px}}
 
 
-/* V7.3 — hotel offers & comparison enhancements */
+/* V7.4 — hotel offers & comparison enhancements */
 .v73-offers{margin:34px 0;padding:28px;border-radius:28px;background:linear-gradient(135deg,#f8fbfc,#eef6f7);border:1px solid rgba(15,96,105,.12)}
 .v73-offers .section-head{margin-bottom:20px}
 .v73-price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -1913,6 +1913,76 @@ header .container{min-height:92px}
     </div>
   </div>
 </section>
+
+<!-- ===== V7.4: smart hotel comparison & budget estimator ===== -->
+<style id="v74-style">
+.v74-section{padding:78px 20px;background:linear-gradient(180deg,#fff,#f7f5ef)}
+.v74-wrap{max-width:1180px;margin:auto}.v74-head{text-align:center;margin-bottom:30px}.v74-head h2{font-size:clamp(28px,4vw,42px);margin:8px 0;color:#082638}.v74-head p{color:#5c6b73;line-height:1.9;max-width:760px;margin:auto}
+.v74-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch}.v74-card{background:#fff;border:1px solid #e4e9e7;border-radius:24px;padding:25px;box-shadow:0 12px 35px rgba(8,38,56,.07)}
+.v74-table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:16px}.v74-table th,.v74-table td{padding:13px 10px;border-bottom:1px solid #edf0ef;text-align:right;font-size:14px}.v74-table th{background:#062638;color:#fff}.v74-table tr:last-child td{border-bottom:0}.v74-price{font-weight:900;color:#0b6b72;direction:ltr;unicode-bidi:isolate}.v74-featured td{background:#fff9ec}.v74-tag{display:inline-block;padding:5px 9px;border-radius:999px;background:#eef8f7;color:#0b6b72;font-size:11px;font-weight:900}
+.v74-form{display:grid;gap:12px}.v74-form label{font-weight:800;font-size:13px;color:#082638}.v74-form select,.v74-form input{width:100%;box-sizing:border-box;margin-top:6px;padding:12px;border:1px solid #ddd7c9;border-radius:12px;background:#fff;font:inherit}.v74-result{margin-top:6px;padding:18px;border-radius:18px;background:linear-gradient(135deg,#062638,#0b6b72);color:#fff}.v74-result small,.v74-result b,.v74-result strong{display:block}.v74-result small{opacity:.75}.v74-result strong{font-size:30px;margin-top:5px;direction:ltr;unicode-bidi:isolate}.v74-result .v74-note{font-size:11px;opacity:.72;margin-top:7px;line-height:1.7}.v74-wa{display:inline-flex;justify-content:center;align-items:center;width:100%;margin-top:12px;padding:12px;border-radius:12px;background:#d9ad43;color:#082638;text-decoration:none;font-weight:900}
+.v74-checks{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}.v74-check{background:#fff;border:1px solid #e4e9e7;border-radius:16px;padding:15px;text-align:center}.v74-check span{display:block;font-size:25px}.v74-check b{display:block;margin-top:6px;font-size:13px}.v74-check small{display:block;color:#6a777d;font-size:11px;margin-top:4px}
+@media(max-width:900px){.v74-grid{grid-template-columns:1fr}.v74-checks{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.v74-section{padding:60px 15px}.v74-card{padding:18px}.v74-table th,.v74-table td{padding:10px 7px;font-size:12px}.v74-checks{grid-template-columns:1fr}}
+</style>
+<section class="v74-section" id="smart-offers">
+  <div class="v74-wrap">
+    <div class="v74-head">
+      <div class="section-eyebrow">V7.4 — اختيار أسهل</div>
+      <h2>قارنوا عروض العمرة واحسبوا التكلفة بسرعة</h2>
+      <p>جدول مختصر للمقارنة مع حاسبة بسيطة تساعدكم على تقدير تكلفة الإقامة حسب الفندق ونوع الغرفة وعدد الأشخاص.</p>
+    </div>
+    <div class="v74-grid">
+      <div class="v74-card">
+        <h3>مقارنة الفنادق</h3>
+        <div style="overflow:auto;margin-top:15px">
+          <table class="v74-table">
+            <thead><tr><th>الفندق</th><th>رباعية</th><th>ثلاثية</th><th>ثنائية</th><th>المعلومة</th></tr></thead>
+            <tbody>
+              <tr><td><b>الرسالة</b></td><td class="v74-price">221,000 دج</td><td class="v74-price">235,000 دج</td><td class="v74-price">265,000 دج</td><td><span class="v74-tag">650 م</span></td></tr>
+              <tr><td><b>الجزيرة</b></td><td class="v74-price">221,000 دج</td><td class="v74-price">235,000 دج</td><td class="v74-price">265,000 دج</td><td><span class="v74-tag">650 م</span></td></tr>
+              <tr class="v74-featured"><td><b>كونكورد</b></td><td class="v74-price">203,000 دج</td><td class="v74-price">214,000 دج</td><td class="v74-price">234,000 دج</td><td><span class="v74-tag">🚌 مجانية</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:#6a777d;font-size:12px;line-height:1.8;margin-top:14px">الأسعار للشخص الواحد حسب نوع الغرفة. يرجى تأكيد السعر النهائي والتوفر وتفاصيل البرنامج مع الوكالة قبل الحجز.</p>
+      </div>
+      <div class="v74-card">
+        <h3>حاسبة تكلفة الإقامة</h3>
+        <form class="v74-form" id="v74CalcForm">
+          <label>الفندق
+            <select id="v74Hotel"><option value="risala">فندق الرسالة</option><option value="jazira">فندق الجزيرة</option><option value="concord">فندق كونكورد</option></select>
+          </label>
+          <label>نوع الغرفة
+            <select id="v74Room"><option value="quad">رباعية</option><option value="triple">ثلاثية</option><option value="double">ثنائية</option></select>
+          </label>
+          <label>عدد الأشخاص
+            <input id="v74People" type="number" min="1" max="50" value="1">
+          </label>
+          <div class="v74-result"><small>التقدير حسب السعر المعروض للشخص</small><strong id="v74Total">221,000 دج</strong><div class="v74-note">هذا تقدير للإقامة وفق المعلومات المعروضة فقط، وليس تأكيدًا للحجز أو السعر النهائي.</div></div>
+          <a class="v74-wa" id="v74Wa" href="https://wa.me/213771618504" target="_blank" rel="noopener">💬 اسأل الوكالة عن هذا الاختيار</a>
+        </form>
+      </div>
+    </div>
+    <div class="v74-checks">
+      <div class="v74-check"><span>💰</span><b>أسعار واضحة</b><small>مقارنة مباشرة بين الغرف</small></div>
+      <div class="v74-check"><span>🏨</span><b>خيارات متعددة</b><small>ثلاثة فنادق في العرض</small></div>
+      <div class="v74-check"><span>🚌</span><b>مواصلات</b><small>مجانية حسب عرض كونكورد</small></div>
+      <div class="v74-check"><span>💬</span><b>استفسار سريع</b><small>تواصل مباشر عبر WhatsApp</small></div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const prices={risala:{quad:221000,triple:235000,double:265000},jazira:{quad:221000,triple:235000,double:265000},concord:{quad:203000,triple:214000,double:234000}};
+  const names={risala:'فندق الرسالة',jazira:'فندق الجزيرة',concord:'فندق كونكورد'};
+  const rooms={quad:'رباعية',triple:'ثلاثية',double:'ثنائية'};
+  const hotel=document.getElementById('v74Hotel'), room=document.getElementById('v74Room'), people=document.getElementById('v74People'), total=document.getElementById('v74Total'), wa=document.getElementById('v74Wa');
+  function update(){const p=prices[hotel.value][room.value]*(Math.max(1,Number(people.value)||1));total.textContent=p.toLocaleString('fr-FR')+' دج';const text=`السلام عليكم، أريد الاستفسار عن ${names[hotel.value]}، غرفة ${rooms[room.value]}، لعدد ${Math.max(1,Number(people.value)||1)} أشخاص. التقدير الظاهر في الموقع: ${p.toLocaleString('fr-FR')} دج.`;wa.href='https://wa.me/213771618504?text='+encodeURIComponent(text)}
+  [hotel,room,people].forEach(el=>el?.addEventListener('input',update));update();
+})();
+</script>
+
 <footer class="v65-footer">
 <div class="v65-footer-grid">
 <div>
