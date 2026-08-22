@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم | V7.8</title>
+<title>وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم | V7.9</title>
 <meta content="وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم — عمرة وحج، تذاكر طيران، فنادق، رحلات منظمة وتأشيرات. تواصل معنا للحجز والاستفسار." name="description"/>
 <meta content="index, follow" name="robots"/>
 <meta content="وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم" name="author"/>
@@ -804,7 +804,7 @@ header .container{min-height:92px}
   @media(max-width:720px){.umrah-price-banner{flex-direction:column;align-items:flex-start}.umrah-price-badge{align-self:stretch;text-align:center}.umrah-price-banner h3{font-size:20px}}
 
 
-/* V7.8 — hotel offers & comparison enhancements */
+/* V7.9 — hotel offers & comparison enhancements */
 .v73-offers{margin:34px 0;padding:28px;border-radius:28px;background:linear-gradient(135deg,#f8fbfc,#eef6f7);border:1px solid rgba(15,96,105,.12)}
 .v73-offers .section-head{margin-bottom:20px}
 .v73-price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -1155,6 +1155,22 @@ h1,h2,h3{letter-spacing:-.02em}
 .v78-note{margin-top:20px;padding:14px 16px;border-radius:15px;background:#fbf7ef;color:#667487;text-align:center;font-size:.88rem;line-height:1.7}
 @media(max-width:900px){.v78-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.v78-grid{grid-template-columns:1fr}.v78-wrap{margin:38px auto}}
+</style>
+
+
+<style id="v79-booking-upgrade">
+.v79-book{max-width:1100px;margin:55px auto;padding:0 18px}
+.v79-box{background:#fff;border:1px solid rgba(16,36,62,.10);border-radius:26px;padding:28px;box-shadow:0 15px 45px rgba(16,36,62,.09)}
+.v79-head{text-align:center;margin-bottom:24px}.v79-head .k{color:#c79a4a;font-weight:900}.v79-head h2{margin:7px 0}.v79-head p{color:#647387}
+.v79-form{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.v79-form label{font-weight:800;color:#10243e;font-size:.92rem}
+.v79-form input,.v79-form select,.v79-form textarea{width:100%;margin-top:7px;padding:12px 13px;border:1px solid rgba(16,36,62,.15);border-radius:12px;font:inherit;box-sizing:border-box;background:#fff}
+.v79-form textarea{min-height:110px;resize:vertical}.v79-full{grid-column:1/-1}
+.v79-send{grid-column:1/-1;border:0;border-radius:13px;padding:14px;background:#10243e;color:#fff;font-weight:900;font-size:1rem;cursor:pointer}
+.v79-send:hover{filter:brightness(1.08)}
+.v79-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.v79-step{padding:14px;border-radius:15px;background:#fbf7ef;text-align:center;color:#5e6e81;font-size:.9rem}.v79-step b{display:block;color:#10243e;margin-bottom:4px}
+@media(max-width:700px){.v79-form{grid-template-columns:1fr}.v79-full{grid-column:auto}.v79-steps{grid-template-columns:1fr}}
 </style>
 
 </head>
@@ -1915,6 +1931,63 @@ h1,h2,h3{letter-spacing:-.02em}
   </div>
 </section>
 
+
+<section class="v79-book" id="booking-request" aria-label="طلب حجز واستفسار">
+  <div class="v79-box">
+    <div class="v79-head">
+      <div class="k">📋 طلبكم يصل مباشرة إلى الوكالة</div>
+      <h2>اطلب عرضًا أو ابدأ إجراءات الحجز</h2>
+      <p>املأ المعلومات الأساسية وسنفتح لك WhatsApp برسالة جاهزة إلى وكالة إفري تايم ترافل.</p>
+    </div>
+    <form class="v79-form" onsubmit="return v79Send(event)">
+      <label>الاسم الكامل
+        <input id="v79-name" required placeholder="اكتب اسمك">
+      </label>
+      <label>رقم الهاتف
+        <input id="v79-phone" required placeholder="مثال: 0771.61.85.04">
+      </label>
+      <label>نوع الخدمة
+        <select id="v79-service">
+          <option>عمرة</option><option>حج</option><option>رحلة سياحية</option><option>فندق</option><option>تذكرة طيران</option><option>خدمة أخرى</option>
+        </select>
+      </label>
+      <label>الاختيار المفضل
+        <input id="v79-choice" placeholder="مثال: فندق كونكورد">
+      </label>
+      <label>عدد المسافرين
+        <input id="v79-count" type="number" min="1" value="1">
+      </label>
+      <label>الفترة أو التاريخ
+        <input id="v79-date" placeholder="مثال: سبتمبر 2026">
+      </label>
+      <label class="v79-full">ملاحظات إضافية
+        <textarea id="v79-notes" placeholder="اكتب أي تفاصيل تريد إضافتها..."></textarea>
+      </label>
+      <button class="v79-send" type="submit">💬 إرسال الطلب عبر WhatsApp</button>
+    </form>
+    <div class="v79-steps">
+      <div class="v79-step"><b>1 — أرسل الطلب</b>المعلومات الأساسية</div>
+      <div class="v79-step"><b>2 — نتواصل معكم</b>لتأكيد الخيارات والتوفر</div>
+      <div class="v79-step"><b>3 — تأكيد الحجز</b>بعد الاتفاق على التفاصيل</div>
+    </div>
+  </div>
+</section>
+<script>
+function v79Send(e){
+  e.preventDefault();
+  const name=document.getElementById('v79-name').value.trim();
+  const phone=document.getElementById('v79-phone').value.trim();
+  const service=document.getElementById('v79-service').value;
+  const choice=document.getElementById('v79-choice').value.trim();
+  const count=document.getElementById('v79-count').value;
+  const date=document.getElementById('v79-date').value.trim();
+  const notes=document.getElementById('v79-notes').value.trim();
+  const msg=`السلام عليكم، أريد الاستفسار/طلب حجز من وكالة إفري تايم ترافل.%0A%0Aالاسم: ${name}%0Aالهاتف: ${phone}%0Aالخدمة: ${service}%0Aالاختيار: ${choice || 'غير محدد'}%0Aعدد المسافرين: ${count}%0Aالتاريخ/الفترة: ${date || 'غير محدد'}%0Aملاحظات: ${notes || 'لا توجد'}`;
+  window.open('https://wa.me/213771618504?text='+msg,'_blank','noopener');
+  return false;
+}
+</script>
+
 </footer>
 <script>
   window.addEventListener('scroll', function(){
@@ -2170,7 +2243,7 @@ h1,h2,h3{letter-spacing:-.02em}
   </div>
 </section>
 
-<!-- ===== V7.8: smart hotel comparison & budget estimator ===== -->
+<!-- ===== V7.9: smart hotel comparison & budget estimator ===== -->
 <style id="v74-style">
 .v74-section{padding:78px 20px;background:linear-gradient(180deg,#fff,#f7f5ef)}
 .v74-wrap{max-width:1180px;margin:auto}.v74-head{text-align:center;margin-bottom:30px}.v74-head h2{font-size:clamp(28px,4vw,42px);margin:8px 0;color:#082638}.v74-head p{color:#5c6b73;line-height:1.9;max-width:760px;margin:auto}
@@ -2184,7 +2257,7 @@ h1,h2,h3{letter-spacing:-.02em}
 <section class="v74-section" id="smart-offers">
   <div class="v74-wrap">
     <div class="v74-head">
-      <div class="section-eyebrow">V7.8 — اختيار أسهل</div>
+      <div class="section-eyebrow">V7.9 — اختيار أسهل</div>
       <h2>قارنوا عروض العمرة واحسبوا التكلفة بسرعة</h2>
       <p>جدول مختصر للمقارنة مع حاسبة بسيطة تساعدكم على تقدير تكلفة الإقامة حسب الفندق ونوع الغرفة وعدد الأشخاص.</p>
     </div>
