@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم | V7.5</title>
+<title>وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم | V7.6</title>
 <meta content="وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم — عمرة وحج، تذاكر طيران، فنادق، رحلات منظمة وتأشيرات. تواصل معنا للحجز والاستفسار." name="description"/>
 <meta content="index, follow" name="robots"/>
 <meta content="وكالة إفري تايم ترافل للسياحة والأسفار بمستغانم" name="author"/>
@@ -804,7 +804,7 @@ header .container{min-height:92px}
   @media(max-width:720px){.umrah-price-banner{flex-direction:column;align-items:flex-start}.umrah-price-badge{align-self:stretch;text-align:center}.umrah-price-banner h3{font-size:20px}}
 
 
-/* V7.5 — hotel offers & comparison enhancements */
+/* V7.6 — hotel offers & comparison enhancements */
 .v73-offers{margin:34px 0;padding:28px;border-radius:28px;background:linear-gradient(135deg,#f8fbfc,#eef6f7);border:1px solid rgba(15,96,105,.12)}
 .v73-offers .section-head{margin-bottom:20px}
 .v73-price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -1011,8 +1011,103 @@ header .container{min-height:92px}
 @media(max-width:800px){.v75-trustbar{grid-template-columns:repeat(2,1fr)}.v75-benefits{grid-template-columns:1fr}.v75-cta{display:block;padding:25px}.v75-cta-actions{margin-top:18px}}
 @media(max-width:480px){.v75-trustbar{grid-template-columns:1fr;padding:0 12px}.v75-trust{padding:13px}.v75-premium{margin:50px auto;padding:0 12px}.v75-cta-actions a{flex:1;min-width:130px}}
 </style>
+
+<style id="v76-visual-upgrade">
+:root{
+  --v76-ink:#10243e;
+  --v76-muted:#5f6f82;
+  --v76-gold:#c79a4a;
+  --v76-gold2:#e7c47a;
+  --v76-cream:#fbf7ef;
+  --v76-line:rgba(16,36,62,.10);
+  --v76-shadow:0 20px 55px rgba(16,36,62,.12);
+}
+html{scroll-behavior:smooth}
+body{background:linear-gradient(180deg,#fff 0%,#fbfaf7 55%,#fff 100%);color:var(--v76-ink)}
+header{
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.hero{
+  position:relative;
+  overflow:hidden;
+}
+.hero::before,.hero::after{
+  content:"";
+  position:absolute;
+  border-radius:999px;
+  pointer-events:none;
+  filter:blur(2px);
+}
+.hero::before{
+  width:420px;height:420px;right:-170px;top:-150px;
+  background:radial-gradient(circle,rgba(199,154,74,.20),transparent 68%);
+}
+.hero::after{
+  width:360px;height:360px;left:-150px;bottom:-170px;
+  background:radial-gradient(circle,rgba(16,36,62,.12),transparent 68%);
+}
+section{scroll-margin-top:90px}
+.card,.hotel-card,.offer-card,.destination-card,.service-card,.feature-card{
+  border:1px solid var(--v76-line);
+  box-shadow:0 10px 35px rgba(16,36,62,.07);
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+}
+.card:hover,.hotel-card:hover,.offer-card:hover,.destination-card:hover,.service-card:hover,.feature-card:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--v76-shadow);
+  border-color:rgba(199,154,74,.35);
+}
+h1,h2,h3{letter-spacing:-.02em}
+.section-kicker{
+  color:var(--v76-gold);
+  font-weight:800;
+  letter-spacing:.04em;
+}
+.v76-trust-strip{
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  padding:12px 16px;background:var(--v76-ink);color:#fff;
+  font-size:.92rem;
+}
+.v76-trust-strip span{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:7px 12px;border:1px solid rgba(255,255,255,.15);
+  border-radius:999px;background:rgba(255,255,255,.06);
+}
+.v76-trust-strip b{color:var(--v76-gold2)}
+.v76-cta{
+  display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;
+  margin:26px 0 8px;
+}
+.v76-cta a{
+  text-decoration:none;border-radius:14px;padding:13px 20px;font-weight:800;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  transition:.2s ease;
+}
+.v76-primary{background:var(--v76-ink);color:#fff;box-shadow:0 10px 24px rgba(16,36,62,.18)}
+.v76-secondary{background:#fff;color:var(--v76-ink);border:1px solid var(--v76-line)}
+.v76-primary:hover,.v76-secondary:hover{transform:translateY(-2px)}
+.v76-mini-note{
+  max-width:900px;margin:10px auto 0;text-align:center;color:var(--v76-muted);
+  font-size:.88rem;
+}
+@media(max-width:700px){
+  .v76-trust-strip{font-size:.82rem;gap:7px}
+  .v76-trust-strip span{padding:6px 9px}
+  .v76-cta a{width:100%}
+}
+</style>
+
 </head>
 <body>
+
+<div class="v76-trust-strip" aria-label="مميزات الوكالة">
+  <span>🕋 <b>عمرة وحج</b> بتنظيم ومتابعة</span>
+  <span>✈️ <b>تذاكر ورحلات</b> وخيارات متعددة</span>
+  <span>🏨 <b>فنادق</b> وعروض مختارة</span>
+  <span>💬 <b>تواصل سريع</b> عبر الهاتف وواتساب</span>
+</div>
+
 <div class="v65-topline">
 <span>📍 مستغانم — حي السلام، مقابل Superette Djilali Shop</span>
 <span>📞 0771.61.85.04 / 0661.22.29.96</span>
@@ -1930,7 +2025,7 @@ header .container{min-height:92px}
   </div>
 </section>
 
-<!-- ===== V7.5: smart hotel comparison & budget estimator ===== -->
+<!-- ===== V7.6: smart hotel comparison & budget estimator ===== -->
 <style id="v74-style">
 .v74-section{padding:78px 20px;background:linear-gradient(180deg,#fff,#f7f5ef)}
 .v74-wrap{max-width:1180px;margin:auto}.v74-head{text-align:center;margin-bottom:30px}.v74-head h2{font-size:clamp(28px,4vw,42px);margin:8px 0;color:#082638}.v74-head p{color:#5c6b73;line-height:1.9;max-width:760px;margin:auto}
@@ -1944,7 +2039,7 @@ header .container{min-height:92px}
 <section class="v74-section" id="smart-offers">
   <div class="v74-wrap">
     <div class="v74-head">
-      <div class="section-eyebrow">V7.5 — اختيار أسهل</div>
+      <div class="section-eyebrow">V7.6 — اختيار أسهل</div>
       <h2>قارنوا عروض العمرة واحسبوا التكلفة بسرعة</h2>
       <p>جدول مختصر للمقارنة مع حاسبة بسيطة تساعدكم على تقدير تكلفة الإقامة حسب الفندق ونوع الغرفة وعدد الأشخاص.</p>
     </div>
@@ -2180,5 +2275,23 @@ header .container{min-height:92px}
   document.querySelectorAll('.v75-reveal').forEach(e=>io.observe(e));
 })();
 </script>
+
+<section aria-label="دعوة للحجز" style="padding:48px 18px 30px;">
+  <div style="max-width:1050px;margin:auto;background:linear-gradient(135deg,#10243e,#1b385b);border-radius:26px;padding:34px 22px;color:#fff;box-shadow:0 22px 55px rgba(16,36,62,.18);">
+    <div style="text-align:center;">
+      <div class="section-kicker" style="color:#e7c47a;">EVERY TIME TRAVEL</div>
+      <h2 style="margin:8px 0 10px;color:#fff;">خطوتكم الأولى نحو رحلة منظمة تبدأ من مستغانم</h2>
+      <p style="margin:0 auto;max-width:720px;color:rgba(255,255,255,.82);">
+        أخبرونا بالوجهة أو نوع الرحلة أو برنامج العمرة الذي تبحثون عنه، وسنساعدكم في اختيار العرض الأنسب.
+      </p>
+      <div class="v76-cta">
+        <a class="v76-primary" href="https://wa.me/213771618504?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%AD%D9%88%D9%84%20%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B6." target="_blank" rel="noopener">💬 اطلب عرضًا عبر WhatsApp</a>
+        <a class="v76-secondary" href="tel:+213771618504">📞 اتصل بنا الآن</a>
+      </div>
+      <div class="v76-mini-note" style="color:rgba(255,255,255,.68);">الأسعار والتوفر قابلان للتغيير، ويُرجى تأكيد التفاصيل النهائية مع الوكالة قبل الحجز.</div>
+    </div>
+  </div>
+</section>
+
 </body>
 </html>
