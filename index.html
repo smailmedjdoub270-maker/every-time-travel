@@ -760,6 +760,33 @@ header .container{min-height:92px}
 @media(max-width:900px){header .container{min-height:78px}.logo img{height:62px!important;max-width:120px!important}.logo-copy strong{font-size:14px}.logo-copy span{font-size:9px}.logo-copy{gap:3px}}
 @media(max-width:600px){.logo-copy span{display:none}.logo img{height:56px!important;max-width:105px!important}.logo-copy strong{font-size:13px}.logo{gap:8px}}
 
+
+/* V6.6 — professional tourism layer */
+.tour-pro{padding:88px 0;background:linear-gradient(180deg,#fff,#f7faf8);}
+.tour-toolbar{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.tour-tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tour-tab{border:1px solid #d9e3df;background:#fff;color:var(--ink,#0B2130);padding:10px 16px;border-radius:999px;cursor:pointer;font:inherit;transition:.2s}
+.tour-tab.active,.tour-tab:hover{background:var(--navy,#082638);color:#fff;border-color:var(--navy,#082638)}
+.tour-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tour-card{background:#fff;border:1px solid #e3ebe8;border-radius:24px;overflow:hidden;box-shadow:0 12px 35px rgba(8,38,56,.07);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.tour-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(8,38,56,.12)}
+.tour-card.is-hidden{display:none}
+.tour-cover{height:205px;background-size:cover;background-position:center;position:relative;display:flex;align-items:flex-end;padding:18px}
+.tour-cover:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(0,0,0,.68))}
+.tour-cover strong,.tour-cover span{position:relative;z-index:1;color:#fff}
+.tour-cover strong{font-size:24px}.tour-cover span{display:block;font-size:12px;opacity:.9;margin-top:4px}
+.tour-body{padding:20px;display:flex;flex-direction:column;gap:13px;flex:1}
+.tour-meta{display:flex;gap:8px;flex-wrap:wrap}.tour-meta span{background:#eef5f2;color:#315d50;padding:6px 9px;border-radius:999px;font-size:12px}
+.tour-body h3{margin:0;font-size:21px}.tour-body p{margin:0;color:var(--muted,#5c6d75);line-height:1.8}
+.tour-points{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0;padding:0;list-style:none}.tour-points li{font-size:13px;color:#314851}.tour-points li:before{content:'✓';margin-left:6px;color:#b18a2d;font-weight:800}
+.tour-actions{display:flex;gap:9px;margin-top:auto}.tour-actions a{flex:1;text-align:center;text-decoration:none;border-radius:12px;padding:11px 10px;font-weight:700}.tour-main{background:var(--navy,#082638);color:#fff}.tour-secondary{border:1px solid #d5dfdc;color:var(--navy,#082638);background:#fff}
+.tour-note{margin-top:24px;padding:16px 18px;border-radius:16px;background:#fff8e8;border:1px solid #ead9a9;color:#6e581e;font-size:13px}
+.custom-trip{margin-top:48px;border-radius:28px;padding:32px;background:linear-gradient(135deg,#082638,#0b3d55);color:#fff;display:grid;grid-template-columns:1fr 1.15fr;gap:30px;align-items:center;box-shadow:0 20px 50px rgba(8,38,56,.18)}
+.custom-trip h3{font-size:30px;margin:0 0 12px}.custom-trip p{color:#dbe9ee;line-height:1.9;margin:0}.custom-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.custom-form input,.custom-form select,.custom-form textarea{width:100%;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.09);color:#fff;border-radius:12px;padding:12px;font:inherit;outline:none}.custom-form input::placeholder,.custom-form textarea::placeholder{color:#c7d7dd}.custom-form select option{color:#111}.custom-form textarea{grid-column:1/-1;min-height:90px;resize:vertical}.custom-form button{grid-column:1/-1;border:0;border-radius:12px;padding:13px;background:#d9ad43;color:#082638;font:inherit;font-weight:800;cursor:pointer}
+.planning{padding:80px 0;background:#fff}.planning-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.plan-step{padding:24px;border:1px solid #e2ebe7;border-radius:20px;background:#fbfdfc}.plan-step i{display:inline-flex;width:40px;height:40px;border-radius:50%;align-items:center;justify-content:center;background:#082638;color:#fff;font-style:normal;font-weight:800;margin-bottom:15px}.plan-step h3{margin:0 0 8px}.plan-step p{margin:0;color:var(--muted,#5c6d75);line-height:1.7;font-size:14px}
+@media(max-width:900px){.tour-grid{grid-template-columns:1fr 1fr}.custom-trip{grid-template-columns:1fr}.planning-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tour-pro{padding:60px 0}.tour-grid{grid-template-columns:1fr}.tour-toolbar{align-items:flex-start}.tour-points{grid-template-columns:1fr}.custom-trip{padding:24px 18px}.custom-trip h3{font-size:24px}.custom-form{grid-template-columns:1fr}.custom-form textarea,.custom-form button{grid-column:auto}.planning-grid{grid-template-columns:1fr}}
+
 </style>
 
 <meta property="og:title" content="Every Time Travel | إفري تايم ترافل">
@@ -886,6 +913,7 @@ header .container{min-height:92px}
         <li><a href="#tourism">السياحة</a></li>
         <li><a href="#offers">العروض</a></li>
         <li><a href="#destinations">الوجهات</a></li>
+        <li><a href="#tour-packages">الرحلات السياحية</a></li>
         <li><a href="#gallery">المعرض</a></li>
         <li><a href="#about">من نحن</a></li>
         <li><a href="#contact-page">اتصل بنا</a></li>
@@ -1167,6 +1195,73 @@ header .container{min-height:92px}
       <a href="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=85" target="_blank" rel="noopener" class="gallery-item g3"><img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=85" alt="إسطنبول"><span>إسطنبول</span></a>
       <a href="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=85" target="_blank" rel="noopener" class="gallery-item g4"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=85" alt="باريس"><span>باريس</span></a>
       <a href="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1200&q=85" target="_blank" rel="noopener" class="gallery-item g5"><img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1200&q=85" alt="دبي"><span>دبي</span></a>
+    </div>
+  </div>
+</section>
+
+
+<section class="tour-pro" id="tour-packages">
+  <div class="container">
+    <div class="tour-toolbar">
+      <div>
+        <div class="section-eyebrow">الرحلات السياحية • V6.6</div>
+        <h2 style="margin:8px 0 0">رحلات مصممة حسب وجهتكم</h2>
+      </div>
+      <div class="tour-tabs" role="tablist" aria-label="تصنيف الرحلات">
+        <button class="tour-tab active" type="button" data-tour="all">الكل</button>
+        <button class="tour-tab" type="button" data-tour="arab">وجهات عربية</button>
+        <button class="tour-tab" type="button" data-tour="europe">أوروبا</button>
+        <button class="tour-tab" type="button" data-tour="international">دولية</button>
+      </div>
+    </div>
+    <p style="color:var(--muted,#5c6d75);max-width:820px;line-height:1.9;margin-bottom:30px">استكشفوا أمثلة لوجهات يمكن إعداد برامج لها. التفاصيل والأسعار والتواريخ النهائية تكون حسب التوفر والطلب، ويمكنكم طلب عرض مخصص من الوكالة.</p>
+    <div class="tour-grid">
+      <article class="tour-card" data-tour-card="international">
+        <div class="tour-cover" style="background-image:url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=85')"><div><strong>إسطنبول</strong><span>سياحة • ثقافة • تسوق</span></div></div>
+        <div class="tour-body"><div class="tour-meta"><span>🇹🇷 تركيا</span><span>برنامج حسب الطلب</span></div><h3>اكتشفوا إسطنبول</h3><p>برنامج سياحي قابل للتخصيص وفق مدة السفر والاهتمامات والميزانية.</p><ul class="tour-points"><li>فنادق وإقامة</li><li>تذاكر سفر</li><li>تنسيق البرنامج</li><li>خيارات جولات</li></ul><div class="tour-actions"><a class="tour-main" href="#custom-trip">اطلب عرضاً</a><a class="tour-secondary" href="#contact">تواصل</a></div></div>
+      </article>
+      <article class="tour-card" data-tour-card="arab">
+        <div class="tour-cover" style="background-image:url('https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1200&q=85')"><div><strong>دبي</strong><span>سياحة • ترفيه • تسوق</span></div></div>
+        <div class="tour-body"><div class="tour-meta"><span>🇦🇪 الإمارات</span><span>برنامج حسب الطلب</span></div><h3>رحلة إلى دبي</h3><p>تنظيم رحلة تجمع بين الإقامة والأنشطة السياحية حسب رغبتكم.</p><ul class="tour-points"><li>اختيار الفندق</li><li>تذكرة السفر</li><li>برنامج سياحي</li><li>استفسار عن الأنشطة</li></ul><div class="tour-actions"><a class="tour-main" href="#custom-trip">اطلب عرضاً</a><a class="tour-secondary" href="#contact">تواصل</a></div></div>
+      </article>
+      <article class="tour-card" data-tour-card="europe">
+        <div class="tour-cover" style="background-image:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=85')"><div><strong>باريس</strong><span>أوروبا • ثقافة • معالم</span></div></div>
+        <div class="tour-body"><div class="tour-meta"><span>🇫🇷 فرنسا</span><span>برنامج حسب الطلب</span></div><h3>اكتشفوا باريس</h3><p>خطة سفر مرنة تشمل خيارات الإقامة والنقل والخدمات المطلوبة.</p><ul class="tour-points"><li>إقامة فندقية</li><li>تذاكر سفر</li><li>تنسيق الرحلة</li><li>برنامج حسب الطلب</li></ul><div class="tour-actions"><a class="tour-main" href="#custom-trip">اطلب عرضاً</a><a class="tour-secondary" href="#contact">تواصل</a></div></div>
+      </article>
+      <article class="tour-card" data-tour-card="arab">
+        <div class="tour-cover" style="background-image:url('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=85')"><div><strong>مكة والمدينة</strong><span>عمرة • روحانية • إقامة</span></div></div>
+        <div class="tour-body"><div class="tour-meta"><span>🇸🇦 السعودية</span><span>عمرة سبتمبر 2026</span></div><h3>برامج العمرة</h3><p>اختيارات فنادق وأسعار معروضة في قسم العمرة، مع إمكانية طلب البرنامج عبر WhatsApp.</p><ul class="tour-points"><li>فندق الرسالة</li><li>فندق الجزيرة</li><li>فندق كونكورد</li><li>متابعة البرنامج</li></ul><div class="tour-actions"><a class="tour-main" href="#umrah-programs">تفاصيل العمرة</a><a class="tour-secondary" href="https://wa.me/213771618504" target="_blank" rel="noopener">WhatsApp</a></div></div>
+      </article>
+      <article class="tour-card" data-tour-card="international">
+        <div class="tour-cover" style="background-image:url('https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=1200&q=85')"><div><strong>وجهة أوروبية أخرى</strong><span>استكشفوا خياراتكم</span></div></div>
+        <div class="tour-body"><div class="tour-meta"><span>🌍 دولية</span><span>حسب الطلب</span></div><h3>رحلة مصممة لكم</h3><p>إذا كانت وجهتكم غير موجودة هنا، أرسلوا لنا تفاصيلها وسنساعدكم في إعداد العرض.</p><ul class="tour-points"><li>تاريخ السفر</li><li>عدد المسافرين</li><li>الفندق</li><li>الخدمات المطلوبة</li></ul><div class="tour-actions"><a class="tour-main" href="#custom-trip">ابدأ التخطيط</a><a class="tour-secondary" href="#contact">اتصل بنا</a></div></div>
+      </article>
+    </div>
+    <div class="tour-note">ℹ️ <strong>ملاحظة:</strong> لا نضع أسعارًا ثابتة للرحلات السياحية هنا لأن السعر يتغير حسب الوجهة، تاريخ السفر، عدد الأشخاص، الفندق والخدمات المطلوبة. اطلبوا عرضًا مخصصًا للحصول على السعر الفعلي.</div>
+    <div class="custom-trip" id="custom-trip">
+      <div><div class="section-eyebrow" style="color:#e4c56b">عرض مخصص</div><h3>قل لنا أين تريدون السفر</h3><p>املأوا المعلومات الأساسية، وسيفتح لكم WhatsApp برسالة جاهزة تحتوي على طلبكم لإرسالها إلى الوكالة.</p></div>
+      <form class="custom-form" id="tourForm">
+        <input id="tName" required placeholder="الاسم الكامل">
+        <input id="tPhone" required type="tel" placeholder="رقم الهاتف">
+        <input id="tDestination" required placeholder="الوجهة المطلوبة">
+        <input id="tDate" type="text" placeholder="تاريخ السفر التقريبي">
+        <input id="tPeople" required type="number" min="1" placeholder="عدد المسافرين">
+        <select id="tType"><option>رحلة سياحية</option><option>تذكرة طيران</option><option>فندق وإقامة</option><option>عمرة / حج</option></select>
+        <textarea id="tMessage" placeholder="أي تفاصيل إضافية أو ميزانية تقريبية"></textarea>
+        <button type="submit">💬 إرسال طلب العرض عبر WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="planning" id="planning">
+  <div class="container">
+    <div class="section-head center"><div class="section-eyebrow">كيف نساعدكم؟</div><h2>من الفكرة إلى الرحلة</h2><p>مسار بسيط وواضح لتجهيز رحلتكم مع الوكالة.</p></div>
+    <div class="planning-grid">
+      <article class="plan-step"><i>01</i><h3>أخبرونا بوجهتكم</h3><p>حددوا الوجهة والتاريخ وعدد المسافرين والخدمة المطلوبة.</p></article>
+      <article class="plan-step"><i>02</i><h3>نقترح الخيارات</h3><p>نرتب المعلومات ونوضح الخيارات المتاحة حسب الطلب.</p></article>
+      <article class="plan-step"><i>03</i><h3>اختيار البرنامج</h3><p>نراجع معكم الفندق والتذاكر والخدمات والتفاصيل.</p></article>
+      <article class="plan-step"><i>04</i><h3>تأكيد الرحلة</h3><p>بعد التأكد من التوفر والأسعار النهائية، يتم تأكيد البرنامج.</p></article>
     </div>
   </div>
 </section>
@@ -1562,6 +1657,7 @@ header .container{min-height:92px}
         <li><a href="#umrah">العمرة</a></li>
         <li><a href="#offers">العروض</a></li>
         <li><a href="#destinations">الوجهات</a></li>
+        <li><a href="#tour-packages">الرحلات السياحية</a></li>
         <li><a href="#services">خدماتنا</a></li>
         <li><a href="#contact">اتصل بنا</a></li>
       </ul>
@@ -1581,6 +1677,7 @@ header .container{min-height:92px}
 <div class="v65-mobile-bar">
   <a href="#umrah"><span>🕋</span>العمرة</a>
   <a href="#offers"><span>🏷️</span>العروض</a>
+  <a href="#tour-packages"><span>✈️</span>الرحلات</a>
   <a href="https://wa.me/213771618504" target="_blank" rel="noopener"><span>💬</span>واتساب</a>
   <a href="#contact"><span>📞</span>اتصل بنا</a>
 </div>
@@ -1606,6 +1703,33 @@ header .container{min-height:92px}
   function shut(){if(lb) lb.style.display='none'}
   close?.addEventListener('click',shut); lb?.addEventListener('click',e=>{if(e.target===lb) shut()});
   document.addEventListener('keydown',e=>{if(e.key==='Escape') shut()});
+})();
+</script>
+
+<script>
+(function(){
+  const tabs=[...document.querySelectorAll('.tour-tab')];
+  const cards=[...document.querySelectorAll('[data-tour-card]')];
+  tabs.forEach(tab=>tab.addEventListener('click',()=>{
+    tabs.forEach(t=>t.classList.remove('active')); tab.classList.add('active');
+    const filter=tab.dataset.tour;
+    cards.forEach(card=>card.classList.toggle('is-hidden',filter!=='all' && card.dataset.tourCard!==filter));
+  }));
+  const form=document.getElementById('tourForm');
+  form?.addEventListener('submit',e=>{
+    e.preventDefault();
+    const vals={
+      name:document.getElementById('tName').value.trim(),
+      phone:document.getElementById('tPhone').value.trim(),
+      destination:document.getElementById('tDestination').value.trim(),
+      date:document.getElementById('tDate').value.trim()||'غير محدد',
+      people:document.getElementById('tPeople').value,
+      type:document.getElementById('tType').value,
+      message:document.getElementById('tMessage').value.trim()||'لا توجد تفاصيل إضافية'
+    };
+    const text=`السلام عليكم، أريد طلب عرض من وكالة إفري تايم ترافل.\nالاسم: ${vals.name}\nالهاتف: ${vals.phone}\nالوجهة: ${vals.destination}\nالتاريخ: ${vals.date}\nعدد المسافرين: ${vals.people}\nالخدمة: ${vals.type}\nالتفاصيل: ${vals.message}`;
+    window.open('https://wa.me/213771618504?text='+encodeURIComponent(text),'_blank');
+  });
 })();
 </script>
 </body>
